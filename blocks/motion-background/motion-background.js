@@ -4,6 +4,10 @@
  */
 
 ( function( _, twgl ) {
+	if ( document.getElementById( 'editor' ) ) {
+		return;
+	}
+
 	const blocks = document.getElementsByClassName( 'wp-block-a8c-motion-background' );
 
 	const gl = twgl.getWebGLContext( document.createElement( 'canvas' ) );
@@ -16,12 +20,7 @@
 		return;
 	}
 
-	const editor = document.getElementById( 'editor' );
-	if ( editor ) {
-		editor.parentNode.insertBefore( gl.canvas, editor );
-	} else {
-		document.body.insertBefore( gl.canvas, document.body.firstChild );
-	}
+	document.body.insertBefore( gl.canvas, document.body.firstChild );
 
 	const vertexShader = `
 		attribute vec3 position;

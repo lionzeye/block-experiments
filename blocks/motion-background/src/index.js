@@ -8,6 +8,7 @@ import { registerBlockType } from '@wordpress/blocks';
  */
 import Edit from './edit';
 import Save from './save';
+import MotionBackground from './motion-background';
 
 export const registerBlock = () => {
 	registerBlockType( 'a8c/motion-background', {
@@ -70,5 +71,6 @@ export const registerBlock = () => {
 		},
 		edit: ( props ) => <Edit { ...props } />,
 		save: ( props ) => <Save { ...props } />,
+		background: ( props ) => <MotionBackground.Background { ...props } />,
 	} );
 };
