@@ -16,14 +16,8 @@ import {
 	RichText,
 	withColors,
 } from '@wordpress/block-editor';
-import { PanelBody, RangeControl } from '@wordpress/components';
+import { PanelBody, RangeControl, Button, ButtonGroup } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
-
-/**
- * Internal dependencies
- */
-// TODO: Move to components folder
-import RadioButtonGroup from '../../../bauhaus-centenary/src/radio-button-group';
 
 /**
  * Internal dependencies
@@ -80,15 +74,14 @@ const Edit = ( {
 						min={ 1 }
 						max={ 100 }
 					/>
-					<RadioButtonGroup
-						data-selected={ attributes.mode }
-						options={ [
-							{ label: __( 'Gradient' ), value: 'gradient' },
-							{ label: __( 'Image' ), value: 'image' },
-						] }
+					<ButtonGroup
+						mode="radio"
 						onChange={ ( mode ) => setAttributes( { mode } ) }
-						selected={ attributes.mode }
-					/>
+						checked={ attributes.mode }
+					>
+						<Button value="gradient">{ __( 'Gradient' ) }</Button>
+						<Button value="image">{ __( 'Image' ) }</Button>
+					</ButtonGroup>
 				</PanelBody>
 				<PanelColorSettings
 					title={ __( 'Color' ) }
