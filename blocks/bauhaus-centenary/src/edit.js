@@ -17,6 +17,7 @@ import {
 	PanelBody,
 	Placeholder,
 	Button,
+	ButtonGroup,
 } from '@wordpress/components';
 import { ENTER } from '@wordpress/keycodes';
 
@@ -24,7 +25,6 @@ import { ENTER } from '@wordpress/keycodes';
  * Internal dependencies
  */
 import * as Icon from './icon';
-import RadioButtonGroup from './radio-button-group';
 import categories from './categories';
 import heights from './heights';
 import colors from './colors';
@@ -70,12 +70,15 @@ const Edit = ( {
 							);
 						} ) }
 					</div>
-					<RadioButtonGroup
-						data-selected={ attributes.height }
-						options={ heights }
+					<ButtonGroup
+						mode="radio"
 						onChange={ ( height ) => setAttributes( { height } ) }
-						selected={ attributes.height }
-					/>
+						checked={ attributes.height }
+					>
+						{ heights.map( ( { label, value } ) => (
+							<Button key={ value } value={ value }>{ label }</Button>
+						) ) }
+					</ButtonGroup>
 					{ ExtraStyles && <ExtraStyles setAttributes={ setAttributes } attributes={ attributes } /> }
 				</PanelBody>
 				<PanelColorSettings
