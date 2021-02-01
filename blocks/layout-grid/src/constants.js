@@ -39,6 +39,14 @@ export const getColumns = () => ( [
 		label: __( '4 columns', 'layout-grid' ),
 		value: 4,
 	},
+	{
+		label: __( '6 columns', 'layout-grid' ),
+		value: 6,
+	},
+	{
+		label: __( '8 columns', 'layout-grid' ),
+		value: 8,
+	},
 ] );
 
 export const DEVICE_DESKTOP = 'Desktop';
@@ -51,7 +59,7 @@ export const getLayouts = () => ( [
 	{ value: DEVICE_MOBILE, label: __( 'Mobile', 'layout-grid' ), icon: mobile },
 ] );
 
-export const MAX_COLUMNS = 4;
+export const MAX_COLUMNS = 8;
 
 export const DEVICE_BREAKPOINTS = [
 	DEVICE_DESKTOP,

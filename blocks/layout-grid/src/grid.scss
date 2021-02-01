@@ -57,8 +57,8 @@
 	display: flex;
 	flex-direction: column;
 
-	@for $i from 1 through 12 {
-		@for $x from 1 through 4 {
+	@for $i from 1 through 24 {
+		@for $x from 1 through 8 {
 			&.column#{ $x }-grid__start-#{ $i } > .wpcom-resize-grid > .wp-block:nth-child(#{ $x }),
 			&.column#{ $x }-grid__start-#{ $i } > .block-editor-inner-blocks > .block-editor-block-list__layout > .wp-block:nth-child(#{ $x }) {
 				grid-column-start: $i;
@@ -66,21 +66,21 @@
 		}
 	}
 
-	@for $i from 1 through 12 {
-		@for $x from 1 through 4 {
+	@for $i from 1 through 24 {
+		@for $x from 1 through 8 {
 			&.column#{ $x }-grid__span-#{ $i } > .wpcom-resize-grid > .wp-block:nth-child(#{ $x }),
 			&.column#{ $x }-grid__span-#{ $i } > .block-editor-inner-blocks > .block-editor-block-list__layout > .wp-block:nth-child(#{ $x }) {
 				grid-column-end: span $i; // Set it to span $i columns, regardless of starting position.
 			}
 		}
 
-		&.column4-grid__span-#{ $i } > .wpcom-resize-grid > .wp-block:nth-child(5) {
-			grid-column-end: span $i; // The re-resizable module adds extra elements that confuse the calculation in 4 column mode
+		&.column4-grid__span-#{ $i } > .wpcom-resize-grid > .wp-block:nth-child(9) {
+			grid-column-end: span $i; // The re-resizable module adds extra elements that confuse the calculation in 8 column mode
 		}
 	}
 
-	@for $i from 1 through 4 {
-		@for $x from 1 through 4 {
+	@for $i from 1 through 8 {
+		@for $x from 1 through 8 {
 			&.column#{ $x }-grid__row-#{ $i } > .wpcom-resize-grid > .wp-block:nth-child(#{ $x }),
 			&.column#{ $x }-grid__row-#{ $i } > .block-editor-inner-blocks > .block-editor-block-list__layout > .wp-block:nth-child(#{ $x }) {
 				grid-row-start: $i;

@@ -1,7 +1,7 @@
 $block-padding: 14px;
-$grid-desktop: repeat(12, 1fr); // Same as 12 instances of 1fr.
-$grid-tablet: repeat(8, 1fr);
-$grid-mobile: repeat(4, 1fr);
+$grid-desktop: repeat(24, 1fr); // Same as 24 instances of 1fr.
+$grid-tablet: repeat(16, 1fr);
+$grid-mobile: repeat(8, 1fr);
 
 $grid-gutter: 24px;
 $grid-gutter-none: 0px;

@@ -2,7 +2,7 @@
  * Returns the 0-based column that the mouse is closest to
  */
 export default function findNearest( parent, xPos, direction, totalColumns ) {
-	// Each column is 1/12th the width of the parent
+	// Each column is 1/24th the width of the parent
 	const { width, x } = parent.getBoundingClientRect();
 	const colWidth = width / totalColumns;
 	const mousePos = xPos - x;

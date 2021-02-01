@@ -6,28 +6,28 @@ import { DEVICE_MOBILE, DEVICE_TABLET } from '../constants';
 
 export const getGridWidth = device => {
 	if ( device === DEVICE_TABLET ) {
-		return 8;
+		return 16;
 	} else if ( device === DEVICE_MOBILE ) {
-		return 4;
+		return 8;
 	}
 
-	return 12;
+	return 24;
 };
 
 export const getGridRows = device => {
 	if ( device === DEVICE_TABLET ) {
-		return 2;
-	} else if ( device === DEVICE_MOBILE ) {
 		return 4;
+	} else if ( device === DEVICE_MOBILE ) {
+		return 8;
 	}
 
 	return 1;
 };
 
 export const getGridMax = ( device, columns ) => {
-	if ( device === DEVICE_TABLET && columns > 2 ) {
+	if ( device === DEVICE_TABLET && columns > 4 ) {
 		// 2x2 grid
-		return getGridWidth( device ) * 2;
+		return getGridWidth( device ) * 4;
 	}
 
 	if ( device === DEVICE_MOBILE ) {
@@ -44,10 +44,10 @@ export const getGridMax = ( device, columns ) => {
 // 4 column: desktop=4x3x1 tablet=2x4x2 mobile=1x4x4
 export function getDefaultSpan( device, columns, column ) {
 	if ( device === DEVICE_TABLET ) {
-		if ( columns === 3 && column === 2 ) {
+		if ( columns === 6 && column === 4 ) {
 			return getGridWidth( device );
 		} else if ( columns > 1 ) {
-			return getGridWidth( device ) / 2;
+			return getGridWidth( device ) / 4;
 		}
 
 		return getGridWidth( device );

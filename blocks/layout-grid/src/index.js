@@ -50,7 +50,7 @@ export function registerBlock() {
 		icon: GridIcon,
 		category: 'design',
 		supports: {
-			align: [ 'full' ],
+			align: [ 'left','wide','full' ],
 			html: false,
 		},
 		example: {
@@ -122,7 +122,7 @@ export function registerBlock() {
 		supports: {
 			inserter: false,
 			reusable: false,
-			html: false,
+			html: false
 		},
 		attributes: {
 			backgroundColor: {
